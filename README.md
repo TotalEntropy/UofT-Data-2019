@@ -1,5 +1,12 @@
 # Heroes of Pymoli Data Analysis
 
+## Summary
+* Of the 576 players the vast majority (84.03%) are male with the remainder being female and non-disclosed. The majority of the purchase value of is provided by these male players although the average purchase value of the smaller female and non-disclosed players is actually higher.
+
+* The largest age group of players is from 20-24 followed by 15-19 and 25-34. The largest total purchase value is from the 20-24 age group who also have a very high average total purchase per person.
+
+* With one exception the top 5 most purchased items are priced over $4. This suggests that there is no relationship between the price of the items and the amount purchased. Three of these items are also on the top 3 most profitable items.
+
 ```python
 # Dependencies and Setup
 %autosave 60
