@@ -1,6 +1,4 @@
-
 # Heroes of Pymoli Data Analysis
-
 
 ```python
 # Dependencies and Setup
@@ -16,13 +14,9 @@ purchase_data = pd.read_csv(csv_file)
 raw = pd.read_csv(csv_file)
 ```
 
-
-
     Autosaving every 60 seconds
     
-
 ## Player Count
-
 
 ```python
 # Counting the number of unique SN assumed to be ID names
@@ -30,23 +24,6 @@ player_count = pd.DataFrame(data = {'Total Players' : raw['SN'].nunique()}, inde
 player_count.head()
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -63,10 +40,7 @@ player_count.head()
 </table>
 </div>
 
-
-
 ## Purchasing Analysis
-
 
 ```python
 # Counting the unique number of item IDs
@@ -85,11 +59,6 @@ purchase_analysis['Total Revenue'] = raw['Price'].sum()
 purchase_analysis.style.format({'Average Purchase Price' : '${:.2f}', 'Total Revenue' : '${:,.2f}'})
 ```
 
-
-
-
-<style  type="text/css" >
-</style>  
 <table id="T_5e7d7180_34b4_11e9_b800_10c37b702c42" > 
 <thead>    <tr> 
         <th class="blank level0" ></th> 
@@ -129,11 +98,6 @@ gender_demographics = gender_demographics.sort_values(["Total Count"], ascending
 gender_demographics.style.format({'Percentage of Players' : '{:.2f}%'})
 ```
 
-
-
-
-<style  type="text/css" >
-</style>  
 <table id="T_5e82a138_34b4_11e9_8e6a_10c37b702c42" > 
 <thead>    <tr> 
         <th class="blank level0" ></th> 
@@ -183,12 +147,7 @@ purchasing_analysis['Avg Total Purchase per Person'] = (purchasing_analysis['Tot
 purchasing_analysis.style.format({'Average Purchase Price' : '${:,.2f}', 'Total Purchase Value' : '${:,.2f}',
                                  'Avg Total Purchase per Person' : '${:,.2f}'})
 ```
-
-
-
-
-<style  type="text/css" >
-</style>  
+ 
 <table id="T_5e85d540_34b4_11e9_816d_10c37b702c42" > 
 <thead>    <tr> 
         <th class="blank level0" ></th> 
@@ -252,12 +211,7 @@ age_demographics['Percentage of Players'] = (age_demographics['Total Count'] / a
 # Displaying as percentage
 age_demographics.style.format({'Percentage of Players' : '{:.2f}%'})
 ```
-
-
-
-
-<style  type="text/css" >
-</style>  
+ 
 <table id="T_5e890950_34b4_11e9_9b43_10c37b702c42" > 
 <thead>    <tr> 
         <th class="blank level0" ></th> 
@@ -328,11 +282,6 @@ purchasing_analysis_age.style.format({'Average Purchase Price' : '${:,.2f}', 'To
                                       'Avg Total Purchase per Person' : '${:,.2f}'})
 ```
 
-
-
-
-<style  type="text/css" >
-</style>  
 <table id="T_5e8c1652_34b4_11e9_9d4e_10c37b702c42" > 
 <thead>    <tr> 
         <th class="blank level0" ></th> 
@@ -398,10 +347,7 @@ purchasing_analysis_age.style.format({'Average Purchase Price' : '${:,.2f}', 'To
     </tr></tbody> 
 </table> 
 
-
-
 ## Top Spendors
-
 
 ```python
 # Generating a df group by SN with the Purchase Count
@@ -422,11 +368,6 @@ top_5_spendors = top_spendors.sort_values('Total Purchase Value', ascending = Fa
 top_5_spendors.style.format({'Average Purchase Price' : '${:,.2f}', 'Total Purchase Value' : '${:,.2f}'})
 ```
 
-
-
-
-<style  type="text/css" >
-</style>  
 <table id="T_5e8f2352_34b4_11e9_bcbe_10c37b702c42" > 
 <thead>    <tr> 
         <th class="blank level0" ></th> 
@@ -467,10 +408,7 @@ top_5_spendors.style.format({'Average Purchase Price' : '${:,.2f}', 'Total Purch
     </tr></tbody> 
 </table> 
 
-
-
 ## Most Popular Items
-
 
 ```python
 # Create new DF with the Item Id and name
@@ -493,11 +431,6 @@ popular_item_5 = popular_item.sort_values('Purchase Count', ascending = False).h
 popular_item_5.style.format({'Item Price' : '${:,.2f}', 'Total Purchase Value' : '${:,.2f}'})
 ```
 
-
-
-
-<style  type="text/css" >
-</style>  
 <table id="T_5e92a57a_34b4_11e9_9026_10c37b702c42" > 
 <thead>    <tr> 
         <th class="blank" ></th> 
@@ -545,9 +478,6 @@ popular_item_5.style.format({'Item Price' : '${:,.2f}', 'Total Purchase Value' :
     </tr></tbody> 
 </table> 
 
-
-
-
 ```python
 # Copying df
 profitable_items = popular_item
@@ -558,12 +488,7 @@ profitable_items_5 = profitable_items.sort_values('Total Purchase Value', ascend
 # Displaying as currency
 profitable_items_5.style.format({'Item Price' : '${:,.2f}', 'Total Purchase Value' : '${:,.2f}'})
 ```
-
-
-
-
-<style  type="text/css" >
-</style>  
+ 
 <table id="T_5e942bfa_34b4_11e9_8075_10c37b702c42" > 
 <thead>    <tr> 
         <th class="blank" ></th> 
