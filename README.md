@@ -33,13 +33,6 @@ raw = ride_raw.merge(city_raw, how = 'left', on = 'city')
 raw.head()
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
