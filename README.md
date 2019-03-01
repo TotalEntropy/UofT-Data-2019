@@ -1,7 +1,9 @@
 # Matplotlib Pyber
+* The majority of the fares, drivers and rides are all from cities classified as urban, followed by those classified as suburban and followed by rural.
+* The average fare for rural ares are the highest while urban is the lowest. This correlates with the higher number of drivers in urban areas and the least in rural areas.
+*  The current conclusion that the average fare for rural areas is greate than suburban and urban areas is suspect due to the lack of ride duration data. To verify this conclusion the ride duration would need to be collected and compared with the average fare. 
 
 ## Dependencies and Setup
-
 
 ```python
 %matplotlib inline
@@ -15,7 +17,6 @@ import numpy as np
     Autosaving every 300 seconds
     
 ## Reading .csv and generating Data Frame
-
 
 ```python
 # File to Load (Remember to change these)
@@ -95,10 +96,7 @@ raw.head()
 </table>
 </div>
 
-
-
 ## Generating Data Frames with scatter plot values
-
 
 ```python
 # Obtain the x and y coordinates for each of the three city types
@@ -129,7 +127,6 @@ rural['s'] = pd.DataFrame(raw_grouped_rural.mean()['driver_count'])
 
 ## Generating the scatter plot
 
-
 ```python
 # Build the scatter plots for each city types
 plt.scatter(urban['x'], urban['y'], label = 'Urban', s = urban['s'] * 10, color = ['coral'], edgecolor = 'black', alpha = .75, marker = 'o')
@@ -157,9 +154,7 @@ plt.savefig("../Images/Pyber_Ride_Sharing_Data.png", bbox_inches="tight")
 
 ![Bubble Plot](Images/Pyber_Ride_Sharing_Data.png)
 
-
 ## Total Fares by City Type
-
 
 ```python
 # Calculate Type Percents
@@ -179,9 +174,7 @@ plt.savefig("../Images/Total_Fares_by_City_Type.png")
 
 ![Total Fares by City Type](Images/Total_Fares_by_City_Type.png)
 
-
 ## Total Rides by City Type
-
 
 ```python
 # Calculate Ride Percents
@@ -200,9 +193,7 @@ plt.savefig("../Images/Total_Rides_by_City_Type.png")
 
 ![Total Rides by City Type](Images/Total_Rides_by_City_Type.png)
 
-
 ## Total Drivers by City Type
-
 
 ```python
 # Calculate Driver Percents
