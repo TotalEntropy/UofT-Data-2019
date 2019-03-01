@@ -1,4 +1,3 @@
-
 # Matplotlib Pyber
 
 ## Dependencies and Setup
@@ -13,11 +12,8 @@ import pandas as pd
 import numpy as np
 ```
 
-
-
     Autosaving every 300 seconds
     
-
 ## Reading .csv and generating Data Frame
 
 
@@ -37,22 +33,12 @@ raw = ride_raw.merge(city_raw, how = 'left', on = 'city')
 raw.head()
 ```
 
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -176,8 +162,7 @@ plt.text(42,35,"Note: \nCircle size correlates with driver count per city.", fon
 plt.savefig("../Images/Pyber_Ride_Sharing_Data.png", bbox_inches="tight")
 ```
 
-
-![png](output_8_0.png)
+![Bubble Plot](Images/Pyber_Ride_Sharing_Data.png)
 
 
 ## Total Fares by City Type
@@ -199,8 +184,7 @@ plt.title("% of Total Fares by City Type")
 plt.savefig("../Images/Total_Fares_by_City_Type.png")
 ```
 
-
-![png](output_10_0.png)
+![Total Fares by City Type](Images/Total_Fares_by_City_Type.png)
 
 
 ## Total Rides by City Type
@@ -221,8 +205,7 @@ plt.title("% of Total Rides by City Type")
 plt.savefig("../Images/Total_Rides_by_City_Type.png")
 ```
 
-
-![png](output_12_0.png)
+![Total Rides by City Type](Images/Total_Rides_by_City_Type.png)
 
 
 ## Total Drivers by City Type
@@ -244,11 +227,4 @@ plt.title("% of Total Drivers by City Type")
 plt.savefig("../Images/Total_Drivers_by_City_Type.")
 ```
 
-
-![png](output_14_0.png)
-
-
-
-```python
-
-```
+![Total Drivers by City Type](Images/Total_Drivers_by_City_Type.png)
