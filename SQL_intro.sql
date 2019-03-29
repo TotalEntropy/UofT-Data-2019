@@ -22,7 +22,8 @@ select * from actor
 	where last_name like '%LI%'
     order by last_name, first_name;
     
--- 2d --
+select country_id, country from country
+where country  in ('Afghanistan', 'Bangladesh', 'China');
 
 -- Part 3 --
 
@@ -59,7 +60,9 @@ update actor
 select * from actor
 	where first_name = 'GROUCHO' AND last_name = 'WILLIAMS';
     
--- Part 5 --
+-- Part 5 maybe correct unsure? --
+
+SHOW CREATE TABLE address;
 
 -- Part 6 --
 
@@ -90,6 +93,70 @@ select customer.first_name, customer.last_name, sum(payment.amount) as 'Total Am
     order by last_name;
     
 -- Part 7 --
-select title, language_id from film
-	where title like ('K%') or title like ('Q%')
-    ;
+
+select title as 'Film Title'
+	from film
+	where title like ('K%') or title like ('Q%') and language_id in (
+		select language_id from language
+        where name = 'English');
+        
+	select title as 'Film Title'
+	from film
+	where title like ('K%') or title like ('Q%') and language_id in (
+		select language_id from language
+        where name = 'English');
+        
+	select `Actor Name` from actor
+    where actor_id in (
+		select actor_id from film_actor
+        where film_id in (
+			select film_id from film
+            where title = 'Alone Trip'));
+            
+select customer.first_name, customer.last_name, customer.email from customer
+left join address on address.address_id = customer.address_id
+left join city on city.city_id = address.city_id
+left join country on country.country_id = city.country_id
+where country = 'Canada';
+
+select title as 'Title' from film
+left join film_category on film_category.film_id = film.film_id
+left join category on category.category_id = film_category.category_id
+where name = 'Family';
+
+select title as 'Title' from film
+order by rental_duration desc;
+
+select store.store_id as 'Store ID', sum(amount) as 'Total Business' from payment
+left join staff on staff.staff_id = payment.staff_id
+left join store on store.store_id = staff.store_id
+group by store.store_id;
+
+select store_id as 'Store ID', city.city as 'City', country.country as 'Country' from store
+left join address on address.address_id = store.address_id
+left join city on city.city_id = address.address_id
+left join country on country.country_id = city.country_id;
+
+select category.name as 'Genre', sum(amount) as 'Gross Revenue' from category
+left join film_category on film_category.category_id = category.category_id
+left join inventory on inventory.film_id = film_category.film_id
+left join rental on rental.inventory_id = inventory.inventory_id
+left join payment on payment.rental_id = rental.rental_id
+group by Genre
+order by `Gross Revenue` desc
+limit 5;
+
+create view Top_5_Categories_by_Gross_Revenue as
+	select category.name as 'Genre', sum(amount) as 'Gross Revenue' from category
+	left join film_category on film_category.category_id = category.category_id
+	left join inventory on inventory.film_id = film_category.film_id
+	left join rental on rental.inventory_id = inventory.inventory_id
+	left join payment on payment.rental_id = rental.rental_id
+	group by Genre
+	order by `Gross Revenue` desc
+	limit 5;
+
+select * from Top_5_Categories_by_Gross_Revenue;
+
+drop view if exists
+Top_5_Categories_by_Gross_Revenue;
