@@ -66,7 +66,7 @@ SHOW CREATE TABLE address;
 
 -- Part 6 --
 
-select staff.first_name, staff.last_name
+select staff.first_name, staff.last_name, address.address
 	from staff
     inner join address on staff.address_id = address.address_id;
     
