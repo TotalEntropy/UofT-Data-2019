@@ -73,6 +73,7 @@ select staff.first_name, staff.last_name, address.address
 select staff.first_name, staff.last_name, sum(payment.amount) as `Total Amount`
 	from staff
     inner join payment on staff.staff_id = payment.staff_id
+    where payment.payment_date like "2005-08%"
     group by first_name;
     
 select film.title, count(film_actor.film_id) as 'Number of Actors'
