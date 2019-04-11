@@ -113,31 +113,38 @@ def tobs():
     # Listing
     tobs_list = list(tobs)
 
+    # Returning as json
     return jsonify(tobs_list)
 
 @app.route("/api/v1.0/<start>")
 def start(start=None):
 
+    # Query
     temp_start = session.query(func.min(Measurement.tobs),\
                 func.avg(Measurement.tobs),\
                 func.max(Measurement.tobs)).\
                 filter(Measurement.date >= start)
 
+    # Listing
     temp_start_list = list(temp_start)
 
+    # Returning json
     return jsonify(temp_start_list)
 
 @app.route("/api/v1.0/<start>/<end>")
 def end(start=None, end=None):
 
+    # Query
     temp_between = session.query(func.min(Measurement.tobs),\
                 func.avg(Measurement.tobs),\
                 func.max(Measurement.tobs)).\
                 filter(Measurement.date >= start,\
                     Measurement.date <= end)
 
+    # List
     temp_between_list = list(temp_between)
 
+    # json
     return jsonify(temp_between_list)
 
 if __name__ == "__main__":
