@@ -53,11 +53,11 @@ def home():
         </li><br>
         <li>
             The min, avg and max temperature values from the date supplied to the max date<br>
-            <a href="/api/v1.0/<start>">/api/v1.0/YYYY-MM-DD</a>
+            /api/v1.0/YYYY-MM-DD
         </li><br>
         <li>
-            The min, avg and max temperature values between the dates supplied<br>
-            <a href="/api/v1.0/<start>/<end>">/api/v1.0/YYYY-MM-DD/YYYY-MM-DD</a>
+            The min, avg and max temperature values between the dates supplied (start/end) <br>
+            /api/v1.0/YYYY-MM-DD/YYYY-MM-DD
         </li>
     </ul>
 </html>"""
