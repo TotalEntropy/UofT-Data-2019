@@ -18,14 +18,14 @@
         <!-- Jumbotron -->
         <div class="jumbotron text-center" style="background-image: url(https://cdn.theatlantic.com/static/mt/assets/science/0831Pic.jpg); background-size: 100%; height: 100%;">
             <h1 class="display-4">Mission to Mars</h1>
-            <a class="btn btn-lg text-white" style="background-color:#c1440e;" href="/bin/scrape" role="button">Scrape New Data</a>
+            <a class="btn btn-lg text-white" style="background-color:#c1440e;" href="/scrape_new" role="button">Scrape New Data</a>
         </div>
 
         <!-- News Section -->
         <div class="container">
             <h3>Latest Mars News</h3>
             <h6 style="color: #c1440e">{{ mars_info.news_title }}</h6>
-            <p>{{ mars_info.news_paragraph }}</p>
+            <p>{{ mars_info.news_p }}</p>
         </div>
 
         <div class="container">
@@ -33,7 +33,7 @@
                 <!-- Left Image-->
                 <div class="col-lg-8 col-md-8 col-sm-12">
                     <h3>Featured Mars Image</h3>
-                    <img src="{{ mars_info.featured_image_url }}" style="max-width:100%; max-height: auto;" alt="Mars Featured Image">
+                    <img src="{{ mars_info.featured_img_url }}" style="max-width:100%; max-height: auto;" alt="Mars Featured Image">
                 </div>
 
                 <!-- Weather Card -->
@@ -62,7 +62,7 @@
             <hr>
             <div class="col-md-12">
                 <div class="row">
-                    {% for item in mars_info.hiu %}
+                    {% for item in mars_info.hemisphere_image_urls %}
                     <div class="col-md-6">
                         <div class="card text-white bg-dark" style="margin: 30px;">
                             <img class="card-img-top" src="{{ item.img_url }}" />
