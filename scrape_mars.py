@@ -3,7 +3,7 @@ def scrape():
     from bs4 import BeautifulSoup as bs
     from splinter import Browser
 
-    executable_path = {'executable_path': '../resources/chromedriver.exe'}
+    executable_path = {'executable_path': 'resources/chromedriver.exe'}
     browser = Browser('chrome', **executable_path, headless=False)
 
     mars_info = {}
