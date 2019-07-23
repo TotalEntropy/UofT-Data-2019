@@ -105,3 +105,8 @@ venv.bak/
 
 # api keys
 api_keys.py
+
+# Others
+US_CDI.csv
+.DS_Store
+~$MentalHealth_in_the_US.pptx
